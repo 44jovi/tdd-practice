@@ -1,1 +1,1 @@
-A collection of TDD practice.
+A collection of TDD practice sessions.
