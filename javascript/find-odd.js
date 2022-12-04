@@ -1,6 +1,7 @@
 function findOdd(A) {
   let counter = {};
 
+  // Store count of each element in new object (hash map) for iterability
   A.forEach((n) => {
     counter[n] = (counter[n] || null) + 1;
   });
