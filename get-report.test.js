@@ -23,10 +23,16 @@ describe("getReport - given a string of grades, returns new string showing a cou
     );
   });
 
-  it("Input: 1 grade colour, mix of lowercase and uppercase", () => {
+  it("Input: 1 grade colour (count: 1), mix of lowercase and uppercase", () => {
     expect(getReport("red")).toBe("Red: 1");
     expect(getReport("RED")).toBe("Red: 1");
     expect(getReport("ReD")).toBe("Red: 1");
     expect(getReport("rEd")).toBe("Red: 1");
+  });
+
+  it("Input: 3 grade colours in different orders (count: 1 each), mix of lowercase and uppercase", () => {
+    expect(getReport("red, GrEeN, AMBER")).toBe("Green: 1\nAmber: 1\nRed: 1");
+    expect(getReport("ambeR, RED, GreEN")).toBe("Green: 1\nAmber: 1\nRed: 1");
+    expect(getReport("GREEn, reD, aMber")).toBe("Green: 1\nAmber: 1\nRed: 1");
   });
 });
