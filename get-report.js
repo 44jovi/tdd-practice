@@ -9,6 +9,7 @@ const getReport = (gradesCSV) => {
 
   const greenGradesCount = `Green: ${gradesCount["Green"]}`;
   const amberGradesCount = `Amber: ${gradesCount["Amber"]}`;
+  const redGradesCount = `Red: ${gradesCount["Red"]}`;
 
   let result = "";
 
@@ -27,6 +28,14 @@ const getReport = (gradesCSV) => {
       result += amberGradesCount;
     } else {
       result += "\n" + amberGradesCount;
+    }
+  }
+
+  if (gradesCount["Red"]) {
+    if (!result) {
+      result += redGradesCount;
+    } else {
+      result += "\n" + redGradesCount;
     }
   }
 
