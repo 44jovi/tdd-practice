@@ -45,4 +45,10 @@ describe("getReport - given a string of grades, returns new string showing a cou
     );
     expect(getReport("GREEn, reD, red, RED")).toBe("Green: 1\nRed: 3");
   });
+
+  it.only("Throw error if input is not comma separated", () => {
+    expect(() => {
+      getReport("Green Green Red Amber Red");
+    }).toThrow("Error - check input");
+  });
 });

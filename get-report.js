@@ -3,7 +3,15 @@
 const getReport = (gradesCSV) => {
   const gradesArray = gradesCSV.split(", ");
 
+  gradesArray.forEach((grade) => {
+    if (grade.includes(" ")) {
+      throw "Error - check input";
+    }
+  });
+
   const gradesCount = {};
+
+  console.log(gradesArray);
 
   gradesArray.forEach((grade) => {
     // Change first character to uppercase
