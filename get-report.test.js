@@ -23,7 +23,7 @@ describe("getReport - given a string of grades, returns new string showing a cou
     );
   });
 
-  it("Counts grade and outputs correctly even if input is a mix of lowercase and uppercase", () => {
+  it("Input: 1 grade colour, mix of lowercase and uppercase", () => {
     expect(getReport("red")).toBe("Red: 1");
     expect(getReport("RED")).toBe("Red: 1");
     expect(getReport("ReD")).toBe("Red: 1");
