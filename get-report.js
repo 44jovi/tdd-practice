@@ -1,6 +1,10 @@
-// Future: consider refactoring into separate functions/classes
+// Future: lots of refactoring opportunities...!
 
 const getReport = (gradesCSV) => {
+  if (typeof gradesCSV != "string") {
+    throw "Error - check input";
+  }
+
   const gradesArray = gradesCSV.split(", ");
 
   gradesArray.forEach((grade) => {
@@ -10,8 +14,6 @@ const getReport = (gradesCSV) => {
   });
 
   const gradesCount = {};
-
-  console.log(gradesArray);
 
   gradesArray.forEach((grade) => {
     // Change first character to uppercase

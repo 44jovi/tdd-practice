@@ -51,4 +51,26 @@ describe("getReport - given a string of grades, returns new string showing a cou
       getReport("Green Green Red Amber Red");
     }).toThrow("Error - check input");
   });
+
+  it("Throw error if input is not a string", () => {
+    expect(() => {
+      getReport(1234);
+    }).toThrow("Error - check input");
+
+    expect(() => {
+      getReport(true);
+    }).toThrow("Error - check input");
+
+    expect(() => {
+      getReport(null);
+    }).toThrow("Error - check input");
+
+    expect(() => {
+      getReport(undefined);
+    }).toThrow("Error - check input");
+
+    expect(() => {
+      getReport();
+    }).toThrow("Error - check input");
+  });
 });
