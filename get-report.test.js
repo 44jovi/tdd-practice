@@ -22,4 +22,8 @@ describe("getReport - given a string of grades, returns new string showing a cou
       "Green: 2\nAmber: 1\nRed: 2"
     );
   });
+
+  it("Counts grade and outputs correctly even if input is lowercase", () => {
+    expect(getReport("red")).toBe("Red: 1");
+  });
 });

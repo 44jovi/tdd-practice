@@ -1,10 +1,17 @@
+// Future: consider refactoring into separate functions/classes
+
 const getReport = (gradesCSV) => {
-  const gradesCount = {};
+  // Convert all chars to lower case
+  // Capitalise first letter of each word
 
   const gradesArray = gradesCSV.split(", ");
 
+  const gradesCount = {};
+
   gradesArray.forEach((grade) => {
-    gradesCount[grade] = (gradesCount[grade] || null) + 1;
+    // Change first character to uppercase
+    const formattedGrade = grade[0].toUpperCase() + grade.slice(1);
+    gradesCount[formattedGrade] = (gradesCount[formattedGrade] || null) + 1;
   });
 
   const greenGradesCount = `Green: ${gradesCount["Green"]}`;
@@ -13,8 +20,6 @@ const getReport = (gradesCSV) => {
 
   let result = "";
 
-  // If grade colour != 0, add to result
-  // If result is not an empty string, prefix with \n
   if (gradesCount["Green"]) {
     if (!result) {
       result += greenGradesCount;
