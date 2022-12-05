@@ -1,9 +1,6 @@
 // Future: consider refactoring into separate functions/classes
 
 const getReport = (gradesCSV) => {
-  // Convert all chars to lower case
-  // Capitalise first letter of each word
-
   const gradesArray = gradesCSV.split(", ");
 
   const gradesCount = {};
