@@ -5,7 +5,11 @@ describe("getReport - given a string of grades, returns new string showing a cou
     expect(getReport("Green")).toBe("Green: 1");
   });
 
-  it("Given 'Green, Green', return 'Green: 2'", () => {
+  it("Input: 'Green, Green'", () => {
     expect(getReport("Green, Green")).toBe("Green: 2");
+  });
+
+  it("Input: 'Green, Amber'", () => {
+    expect(getReport("Green, Amber")).toBe("Green: 1\nAmber: 1");
   });
 });

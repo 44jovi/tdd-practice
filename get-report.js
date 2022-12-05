@@ -1,16 +1,36 @@
 const getReport = (gradesCSV) => {
   const gradesCount = {};
 
-  // Split string into array of strings
   const gradesArray = gradesCSV.split(", ");
 
-  // Create new object (hash map) storing a count of each grade
   gradesArray.forEach((grade) => {
     gradesCount[grade] = (gradesCount[grade] || null) + 1;
   });
 
-  // Green count
-  return `Green: ${gradesCount["Green"]}`;
+  const greenGradesCount = `Green: ${gradesCount["Green"]}`;
+  const amberGradesCount = `Amber: ${gradesCount["Amber"]}`;
+
+  let result = "";
+
+  // If grade colour != 0, add to result
+  // If result is not an empty string, prefix with \n
+  if (gradesCount["Green"]) {
+    if (!result) {
+      result += greenGradesCount;
+    } else {
+      result += "\n" + greenGradesCount;
+    }
+  }
+
+  if (gradesCount["Amber"]) {
+    if (!result) {
+      result += amberGradesCount;
+    } else {
+      result += "\n" + amberGradesCount;
+    }
+  }
+
+  return result;
 };
 
 module.exports = getReport;
