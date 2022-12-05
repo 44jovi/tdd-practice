@@ -10,7 +10,9 @@ const getReport = (gradesCSV) => {
 
   gradesArray.forEach((grade) => {
     // Change first character to uppercase
-    const formattedGrade = grade[0].toUpperCase() + grade.slice(1);
+    // Change rest of characters to lowercase
+    const formattedGrade =
+      grade[0].toUpperCase() + grade.slice(1).toLowerCase();
     gradesCount[formattedGrade] = (gradesCount[formattedGrade] || null) + 1;
   });
 
