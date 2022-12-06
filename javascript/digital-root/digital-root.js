@@ -10,7 +10,11 @@ function digitalRoot(n) {
     return total;
   };
 
-  if (sum > 9) {
+  if (sum <= 9) {
+    return sum;
+  }
+
+  while (sum > 9) {
     digitsArray = sum.toString().split("");
     sum = sumArray(digitsArray);
     if (sum < 10) {
