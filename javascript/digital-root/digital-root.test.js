@@ -24,4 +24,8 @@ describe("digitalRoot - returns the digital root of a given integer", () => {
   it("Input: 123456789", () => {
     expect(digitalRoot(123456789)).toBe(9);
   });
+
+  it("Input: 987654321", () => {
+    expect(digitalRoot(987654321)).toBe(9);
+  });
 });
