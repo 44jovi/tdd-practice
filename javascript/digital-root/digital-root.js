@@ -1,21 +1,22 @@
 function digitalRoot(n) {
-  // Convert n to array of strings
-  nStrings = n.toString().split("");
+  let sum = n;
+  let digitsArray = [];
 
-  // Convert strings back into integers
-  nDigits = nStrings.map((digit) => {
-    return parseInt(digit);
-  });
-
-  let sum = 0;
-
-  if (sum === 0) {
-    nDigits.forEach((digit) => {
-      sum += digit;
+  const sumArray = (array) => {
+    let total = 0;
+    array.forEach((digit) => {
+      total += parseInt(digit);
     });
-  }
+    return total;
+  };
 
-  return sum;
+  if (sum > 9) {
+    digitsArray = sum.toString().split("");
+    sum = sumArray(digitsArray);
+    if (sum < 10) {
+      return sum;
+    }
+  }
 }
 
 module.exports = digitalRoot;
