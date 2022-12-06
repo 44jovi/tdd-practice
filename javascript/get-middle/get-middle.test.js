@@ -8,4 +8,8 @@ describe("getMiddle - returns middle character(s) of a word", () => {
   it("Input: 'testing'", () => {
     expect(getMiddle("testing")).toBe("t");
   });
+
+  it("Input: 'middle'", () => {
+    expect(getMiddle("middle")).toBe("dd");
+  });
 });
