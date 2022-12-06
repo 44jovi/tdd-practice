@@ -1,14 +1,10 @@
 function getMiddle(s) {
-  // Get word char length
-  // Divide by 2
-  // If result is float
-  // - round up to nearest integer
-  // - return char at index of the integer
-
   const midpoint = s.length / 2.0;
 
+  // If midpoint is an integer
   if (midpoint % 1 === 0) {
     return `${s[midpoint - 1]}${s[midpoint]}`;
+    // If midpoint is a float
   } else {
     return `${s[Math.floor(midpoint)]}`;
   }
