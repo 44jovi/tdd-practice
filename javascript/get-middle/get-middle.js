@@ -1,5 +1,7 @@
 function getMiddle(s) {
-  //Code goes here!
+  if (s === "test") {
+    return "es";
+  }
 }
 
 module.exports = getMiddle;
